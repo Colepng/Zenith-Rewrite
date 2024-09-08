@@ -4,10 +4,13 @@
 
 package ca.warp7.frc2024;
 
+import ca.warp7.frc2024.subsystems.intake.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 
 public class RobotContainer {
+    IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+
     public RobotContainer() {
         configureBindings();
     }
