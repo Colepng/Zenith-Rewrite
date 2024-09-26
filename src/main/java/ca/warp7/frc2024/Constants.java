@@ -26,4 +26,11 @@ public final class Constants {
 
         public static final int MOTOR_CAN_ID = 20;
     }
+
+    public static class Feeder {
+        public static final double LOOP_TIME = 0.020;
+
+        public static final int TOP_MOTOR_CAN_ID = 50;
+        public static final int BOTTOM_MOTOR_CAN_ID = 51;
+    }
 }

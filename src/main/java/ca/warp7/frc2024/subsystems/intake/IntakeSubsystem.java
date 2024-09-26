@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import org.littletonrobotics.junction.Logger;
 
 public class IntakeSubsystem extends SubsystemBase {
-    IntakeIO io = new IntakeIOSim();
+    IntakeIO io;
     IntakeIOInputsAutoLogged inputs = new IntakeIOInputsAutoLogged();
 
     public IntakeSubsystem() {
@@ -23,13 +23,13 @@ public class IntakeSubsystem extends SubsystemBase {
         }
     }
 
+    public Command setVolts(double volts) {
+        return runOnce(() -> io.setVolts(volts));
+    }
+
     @Override
     public void periodic() {
         io.updateInputs(inputs);
         Logger.processInputs("Intake", inputs);
-    }
-
-    public Command setVolts(double volts) {
-        return runOnce(() -> io.setVolts(volts));
     }
 }
